@@ -1,0 +1,47 @@
+﻿@model LoginDto
+
+<form action="Login" method="post">
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+
+            <div class="card">
+                <div class="card-header">
+                    Login
+                </div>
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="EmailAddressOrUsername"></label>
+                        <input asp-for="EmailAddressOrUsername" class="form-control" />
+                        <span asp-validation-for="EmailAddressOrUsername" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                        <div class="col-8 text-end">
+                            <a asp-action="GoogleLogin" class="btn btn-danger">Login with Google</a>
+                        </div>
+                    </div>
+                    <hr />
+                    <a asp-action="RemindPassword" class="btn btn-warning">Remind Password</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

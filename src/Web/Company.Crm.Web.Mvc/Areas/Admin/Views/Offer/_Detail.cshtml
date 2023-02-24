@@ -1,0 +1,41 @@
+﻿@model OfferDto
+
+<div class="modal-header">
+    <h5 class="modal-title">Detail</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <div class="row mb-3">
+        <label asp-for="Id" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.Id</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="OfferDate" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.OfferDate</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="EmployeeUserId" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.EmployeeUserId</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="BidAmount" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.BidAmount</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+            <label asp-for="OfferStatusId" class="col-lg-3 col-form-label"></label>
+            <div class="col-lg-9">
+                <span class="form-control-plaintext">@Model.OfferStatusId</span>
+            </div>
+        </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+</div>

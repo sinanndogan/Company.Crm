@@ -1,0 +1,47 @@
+﻿@model TaskDto
+
+<div class="modal-header">
+    <h5 class="modal-title">Detail</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <div class="row mb-3">
+        <label asp-for="RequestId" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.RequestId</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="TaskStatusId" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.TaskStatusId</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="EmployeeUserId" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.EmployeeUserId</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="TaskStartDate" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.TaskStartDate</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="TaskEndDate" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.TaskEndDate</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="Description" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.Description</span>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+</div>

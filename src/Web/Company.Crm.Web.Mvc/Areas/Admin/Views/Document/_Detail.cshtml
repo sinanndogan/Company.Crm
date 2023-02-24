@@ -1,0 +1,37 @@
+﻿@model Document
+<div class="modal-header">
+    <h5 class="modal-title">Detail</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    
+    <div class="row mb-3">
+        <label asp-for="UserId" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.UserId</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="RequestId" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.RequestId</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="DocumentFileName" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.DocumentFileName</span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label asp-for="DocumentTypeId" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.DocumentTypeId</span>
+        </div>
+    </div>
+   
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+</div>

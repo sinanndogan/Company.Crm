@@ -1,0 +1,53 @@
+﻿@model CustomerDto
+
+<div class="modal-header">
+    <h5 class="modal-title">Detail</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    <div class="row mb-3">
+        <label asp-for="UserId" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.UserId</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="IdentityNumber" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.IdentityNumber</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="GenderId" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.GenderId</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="TitleId" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.TitleId</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="StatusTypeId" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.StatusTypeId</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="CompanyName" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.CompanyName</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="BirthDate" class="col-lg-3 col-form-label"></label>
+        <div class="col-lg-9">
+            <span class="form-control-plaintext">@Model.BirthDate</span>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+</div>

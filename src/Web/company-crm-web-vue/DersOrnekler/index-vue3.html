@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<input v-model="message">
+		{{ message }}
+		<hr>
+		<input v-model="price">
+		Price: {{ price }},
+		Tax: {{ price * 0.18 }},
+		Tax: {{ priceTax }},
+		<hr>
+		Now: {{ now }}
+	</div>
+
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script>
+		const { createApp } = Vue
+		createApp({
+			data() {
+				return {
+					message: 'Hello Vue!',
+					price: 59.56
+				}
+			},
+			computed: {
+				priceTax() {
+					return this.price * 0.18
+				},
+				now() {
+					return Date.now()
+				}
+			},
+			watch: {
+				price(newPrice, oldPrice) {
+					if (parseFloat(newPrice) > parseFloat(oldPrice)) {
+						this.message = "Fiyat arttı";
+					} else {
+						this.message = "Fiyat azaldı";
+					}
+				}
+			},
+			mounted() {
+
+			},
+			methods: {
+
+			},
+		}).mount('#app')
+	</script>
+</body>
+</html>

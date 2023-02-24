@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap demo</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+	<div id="app1">
+		<div class="row">
+			<Alert>
+				Merhaba 1
+			</Alert>
+		</div>
+		<div class="row">
+			<Alert>
+				Merhaba 2
+			</Alert>
+		</div>
+	</div>
+
+	<div id="app2">
+		<div class="row">
+			<Alert />
+		</div>
+		<div class="row">
+			<Alert2 />
+		</div>
+		<div class="row">
+			<alert-warning />
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+	<script>
+		// Global Component: Tüm vue instance blokları içerisinde kullanılabilir.
+		// Kullanımı: <Alert>Merhaba</Alert>
+		Vue.component('Alert', {
+			template: `
+				<div class="alert alert-success">
+					<b>{{ title }}</b>
+					<slot></slot>
+				</div>
+			`,
+			data() {
+				return {
+					title: 'Alert!'
+				}
+			}
+		});
+
+		// Local Component: Bir değişken olarak tanımlanır. Kullanacağımız vue instance içerisinde components özelliğinde belirtilmelidir.
+		const Alert2 = {
+			template: `
+				<div class="alert alert-warning">{{ message }}</div>
+			`,
+			data() {
+				return {
+					message: 'Hello Vue!'
+				}
+			}
+		};
+
+		var app1 = new Vue({
+			el: '#app1',
+		});
+
+		var app2 = new Vue({
+			el: '#app2',
+			components: {
+				Alert2,
+				'alert-warning': Alert2,
+			},
+			data: {
+			},
+			methods: {
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿@model Document
+
+@if (!Html.ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+}
+
+<div class="row mb-3">
+    <label asp-for="UserId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="UserId" class="form-control" />
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label asp-for="RequestId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="RequestId" class="form-control" />
+        <span asp-validation-for="RequestId" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label asp-for="DocumentFileName" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="DocumentFileName" class="form-control" />
+        <span asp-validation-for="DocumentFileName" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label asp-for="DocumentTypeId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="DocumentTypeId" class="form-control" />
+        <span asp-validation-for="DocumentTypeId" class="text-danger"></span>
+    </div>
+</div>
+
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}

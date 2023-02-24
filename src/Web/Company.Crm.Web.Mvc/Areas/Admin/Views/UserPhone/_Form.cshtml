@@ -1,0 +1,34 @@
+﻿@model CreateOrUpdateUserPhoneDto
+
+@if (!Html.ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+}
+
+<div class="row mb-3">
+    <label asp-for="UserId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="UserId" class="form-control" />
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label asp-for="PhoneType" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="PhoneType" class="form-control" />
+        <span asp-validation-for="PhoneType" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label asp-for="PhoneNumber" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+</div>
+
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}

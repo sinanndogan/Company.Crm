@@ -1,0 +1,37 @@
+﻿@model Company.Crm.Application.Dtos.UserAddress.AddressCreateOrUpdateDto
+
+@if (!Html.ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+}
+
+<div class="row mb-3">
+    <label asp-for="UserId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="UserId" class="form-control" />
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label asp-for="AddressType" class="col-lg-3 col-form-label">Address Type</label>
+    <div class="col-lg-9">
+        <select class="form-select" asp-for="AddressType" asp-items="Model.AddressTypes">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="AddressType" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label asp-for="Description" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+</div>
+
+
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}

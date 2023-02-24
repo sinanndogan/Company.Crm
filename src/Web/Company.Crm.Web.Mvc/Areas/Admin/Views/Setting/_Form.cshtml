@@ -1,0 +1,26 @@
+﻿@model Setting
+
+@if (!Html.ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+}
+
+<div class="row mb-3">
+    <label asp-for="SettingKey" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="SettingKey" class="form-control" />
+        <span asp-validation-for="SettingKey" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label asp-for="SettingValue" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="SettingValue" class="form-control" />
+        <span asp-validation-for="SettingValue" class="text-danger"></span>
+    </div>
+</div>
+
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}

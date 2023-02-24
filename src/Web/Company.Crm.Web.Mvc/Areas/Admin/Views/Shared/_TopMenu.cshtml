@@ -1,0 +1,48 @@
+﻿<ul class="navbar-nav flex-grow-1">
+    <li class="nav-item">
+        <a class="nav-link" asp-area="Admin" asp-controller="Home" asp-action="Index">Dashboard</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-area="Admin" asp-controller="Customer" asp-action="Index">Customers</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-area="Admin" asp-controller="Sale" asp-action="Index">Sales</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-area="Admin" asp-controller="Notification" asp-action="Index">Notifications</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-area="Admin" asp-controller="UserAddress" asp-action="Index">Addresses</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-area="Admin" asp-controller="Offer" asp-action="Index">Offer</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-area="Admin" asp-controller="Setting" asp-action="Index">Settings</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            User Management
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="Home" asp-action="Index">Users</a></li>
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="Home" asp-action="Index">Roles</a></li>
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="Home" asp-action="Index">Permissions</a></li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Lists
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="Region" asp-action="Index">Regions</a></li>
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="Title" asp-action="Index">Titles</a></li>
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="Department" asp-action="Index">Departments</a></li>
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="DocumentType" asp-action="Index">Document Types</a></li>
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="Gender" asp-action="Index">Genders</a></li>
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="OfferStatus" asp-action="Index">Offer Statuses</a></li>
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="RequestStatus" asp-action="Index">Request Statuses</a></li>
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="StatusType" asp-action="Index">Status Types</a></li>
+        </ul>
+    </li>
+</ul>

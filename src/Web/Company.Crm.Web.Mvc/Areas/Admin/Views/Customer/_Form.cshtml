@@ -1,0 +1,66 @@
+﻿@model CreateOrUpdateCustomerDto
+
+@if (!Html.ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+}
+
+<div class="row mb-3">
+    <label asp-for="UserId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="UserId" class="form-control" />
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
+</div>
+<div class="row mb-3">
+    <label asp-for="IdentityNumber" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="IdentityNumber" class="form-control" />
+        <span asp-validation-for="IdentityNumber" class="text-danger"></span>
+    </div>
+</div>
+<div class="row mb-3">
+    <label asp-for="GenderId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <select class="form-select" asp-for="GenderId" asp-items="Model.Genders">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="GenderId" class="text-danger"></span>
+    </div>
+</div>
+<div class="row mb-3">
+    <label asp-for="TitleId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <select class="form-select" asp-for="TitleId" asp-items="Model.Titles">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="TitleId" class="text-danger"></span>
+    </div>
+</div>
+<div class="row mb-3">
+    <label asp-for="StatusTypeId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <select class="form-select" asp-for="StatusTypeId" asp-items="Model.StatusTypes">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="StatusTypeId" class="text-danger"></span>
+    </div>
+</div>
+<div class="row mb-3">
+    <label asp-for="CompanyName" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="CompanyName" class="form-control" />
+        <span asp-validation-for="CompanyName" class="text-danger"></span>
+    </div>
+</div>
+<div class="row mb-3">
+    <label asp-for="BirthDate" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="BirthDate" class="form-control" />
+        <span asp-validation-for="BirthDate" class="text-danger"></span>
+    </div>
+</div>
+
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}

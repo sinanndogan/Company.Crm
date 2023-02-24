@@ -1,0 +1,37 @@
+﻿@model CreateOrUpdateUserEmailDto
+
+@if (!Html.ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+}
+
+<div class="row mb-3">
+    <label asp-for="UserId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="UserId" class="form-control" />
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label asp-for="EmailType" class="col-lg-3 col-form-label">Email Type</label>
+    <div class="col-lg-9">
+        <select class="form-select" asp-for="EmailType" asp-items="Model.EmailTypes">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="EmailType" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label asp-for="EmailAddress" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="EmailAddress" class="form-control" />
+        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+    </div>
+</div>
+
+
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}

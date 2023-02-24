@@ -1,0 +1,47 @@
+﻿@model OfferDto
+
+@if (!Html.ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+}
+
+<div class="row mb-3">
+    <label asp-for="RequestId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="RequestId" class="form-control" />
+        <span asp-validation-for="RequestId" class="text-danger"></span>
+    </div>
+</div>
+<div class="row mb-3">
+    <label asp-for="EmployeeUserId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="EmployeeUserId" class="form-control" />
+        <span asp-validation-for="EmployeeUserId" class="text-danger"></span>
+    </div>
+</div>
+<div class="row mb-3">
+    <label asp-for="OfferStatusId" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="OfferStatusId" class="form-control" />
+        <span asp-validation-for="OfferStatusId" class="text-danger"></span>
+    </div>
+</div>
+<div class="row mb-3">
+    <label asp-for="BidAmount" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="BidAmount" class="form-control" />
+        <span asp-validation-for="BidAmount" class="text-danger"></span>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <label asp-for="OfferDate" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="OfferDate" class="form-control" />
+        <span asp-validation-for="OfferDate" class="text-danger"></span>
+    </div>
+</div>
+
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}

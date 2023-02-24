@@ -1,0 +1,57 @@
+﻿@model List<TaskDto>
+
+<h2>Tasks</h2>
+<a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-action" id="createModal" asp-action="Create">
+    <i class="bi bi-plus"></i> Create
+</a>
+
+@await Html.PartialAsync("_Modal", new BootstrapModel {
+    Id = "modal-action",
+    AreaLabeledId = "modal-action-label",
+    Size = ModalSize.Medium
+})
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x=>x[0].Id)</th>
+            <th>@Html.DisplayNameFor(x=>x[0].RequestId)</th>
+            <th>@Html.DisplayNameFor(x=>x[0].TaskStatusId)</th>
+            <th>@Html.DisplayNameFor(x=>x[0].EmployeeUserId)</th>
+            <th>@Html.DisplayNameFor(x=>x[0].TaskStartDate)</th>
+            <th>@Html.DisplayNameFor(x=>x[0].TaskEndDate)</th>
+            <th>@Html.DisplayNameFor(x=>x[0].Description)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Id</td>
+                <td>@task.RequestId</td>
+                <td>@task.TaskStatusId</td>
+                <td>@task.EmployeeUserId</td>
+                <td>@task.TaskStartDate.ToShortDateString()</td>
+                <td>@task.TaskEndDate.ToShortDateString()</td>
+                <td>@task.Description</td>
+                <td>
+                    <a id="detailModal" asp-action="Detail" asp-route-id="@task." data-bs-toggle="modal" data-bs-target="#modal-action" class="btn btn-warning">
+                        <i class="bi bi-search"></i> Detail
+                    </a>
+                    <a id="editModal" asp-action="Edit" asp-route-id="@task.Id" data-bs-toggle="modal" data-bs-target="#modal-action" class="btn btn-info">
+                        <i class="bi bi-pencil"></i> Edit
+                    </a>
+                    <a id="deleteModal" asp-action="Delete" asp-route-id="@task.Id" data-bs-toggle="modal" data-bs-target="#modal-action" class="btn btn-danger">
+                        <i class="bi bi-trash"></i> Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="~/lib/toastr.js/toastr.min.js"></script>
+    <link rel="stylesheet" href="~/lib/toastr.js/toastr.min.css" />
+}

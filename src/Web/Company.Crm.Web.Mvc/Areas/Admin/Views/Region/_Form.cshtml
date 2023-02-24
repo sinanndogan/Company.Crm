@@ -1,0 +1,20 @@
+﻿@model Region
+
+@if (!Html.ViewData.ModelState.IsValid)
+{
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+}
+
+
+<div class="row mb-3">
+    <label asp-for="Name" class="col-lg-3 col-form-label"></label>
+    <div class="col-lg-9">
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+</div>
+
+
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}

@@ -1,0 +1,12 @@
+﻿@{
+    //Layout = "_BasicLayout";
+}
+
+<h1>Error</h1>
+
+@if (ViewBag.ErrorCode == "404")
+{
+    <h2>Page not found!</h2>
+
+    <a href="/">Homepage</a>
+}
